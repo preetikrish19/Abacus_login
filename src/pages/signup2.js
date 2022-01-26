@@ -1,61 +1,59 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
 import departments from "./assets/departments";
 import years from "./assets/years";
 import colleges from "./assets/colleges";
-const [year, setyear] = useState(null);
-const [dept, setdept] = useState(null);
-const [college, setcollege] = useState(null);
 
-const handleColg = (selectedOption) => {
-  setcollege(selectedOption);
-}
-const handleDept = (selectedOption) => {
-  setdept(selectedOption);
-}
-const handleYear = (selectedOption)  => {
-  setyear(selectedOption.value);
-}
-class SignUpForm extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      email: "",
-      password: "",
-      name: "",
-      phone: "",
-      conpass: "",
-      hasAgreed: false
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-
-  }
-  
-  handleChange(event) {
-    let target = event.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
+function SignUp2 () {
+  const [dept,setDept] = useState('');
+  const [year, setYear] = useState('')
+  const [college, setCollege] = useState('')
+  const customStyles = {
+    control: (base, state) => ({
+      ...base,
+      color: "#35858B",
+      background: "cream",    //bg color change here
+      // match with the menu
+      borderRadius: state.isFocused ? "3px 3px 0 0" : 3,
+      // Overwrittes the different states of border
+      borderColor: state.isFocused ? "yellow" : "green",
+      // Removes weird border around container
+      boxShadow: state.isFocused ? null : null,
+      "&:hover": {
+        // Overwrittes the different states of border
+        borderColor: state.isFocused ? "red" : "blue"
+      }
+    }),
+    menu: base => ({
+      ...base,
+      // override border radius to match the box
+      color: "#35858B",
+      borderRadius: 0,
+      // kill the gap
+      marginTop: 0
+    }),
+    menuList: base => ({
+      ...base,
+      color: "#35858B",
+      // kill the white space on first and last option
+      padding: 0
+    }),
     
-    this.setState({
-      [name]: value
-    });
+  };
+  const handleDeptChange = (selectedOption) => {
+    setDept(selectedOption)
+  }
+  const handleCollegeChange = (selectedOption) => {
+    setCollege(selectedOption);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-
-    console.log("The form was submitted with the following data:");
-    console.log(this.state);
+  const handleYearChange = (selectedOption) => {
+    setYear(selectedOption.value);
   }
-
-  render() {
     return (
-      <div className="formCenter">
-        <form onSubmit={this.handleSubmit} className="formFields">
+        <div className="formCenter">
+        <form className="formFields">
           {/*name*/}
           <div className="formField">
             <label className="formFieldLabel" htmlFor="name">
@@ -67,44 +65,9 @@ class SignUpForm extends Component {
               className="formFieldInput"
               placeholder="Enter your full name"
               name="name"
-              value={this.state.name}
-              onChange={this.handleChange}
             />
           </div>
-
-          {/*year*/}
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="year">
-              Year
-            </label>
-            <Select className="drop"  components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
-            options={years.map(opt => ({ label: opt, value: opt }))}
-            onChange={handleYear} 
-            placeholder="Year" />
-          </div>
-
-          {/*department*/}
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="dept">
-              Department
-            </label>
-            <Select className="drop" components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
-            options={departments.map(opt => ({ label: opt, value: opt }))}
-            onChange={handleDept} 
-            placeholder="Department" />
-          </div>
-
-            {/*college*/}
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="colg">
-              College
-            </label>
-            <Select className="drop" components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
-            options={colleges.map(opt => ({ label: opt, value: opt }))}
-            onChange={handleColg} 
-            placeholder="College" />
-          </div>
-
+          {/*email*/}
           <div className="formField">
             <label className="formFieldLabel" htmlFor="email">
               E-Mail Address
@@ -115,8 +78,6 @@ class SignUpForm extends Component {
               className="formFieldInput"
               placeholder="Enter your email"
               name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
             />
           </div>
            {/*phone*/}
@@ -130,10 +91,43 @@ class SignUpForm extends Component {
               className="formFieldInput"
               placeholder="Enter your Phone Number"
               name="phone"
-              value={this.state.phone}
-              onChange={this.handleChange}
             />
           </div>
+          
+          {/*college*/}
+          <div className="formField">
+            <label className="formFieldLabel" htmlFor="colg">
+              College
+            </label>
+            <Select className="drop" styles={customStyles} components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+            options={colleges.map(opt => ({ label: opt, value: opt }))}
+            onChange={handleCollegeChange} 
+            placeholder="College" />
+          </div>
+
+          {/*department*/}
+          <div className="formField">
+            <label className="formFieldLabel" htmlFor="dept">
+              Department
+            </label>
+            <Select className="drop" styles={customStyles} components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+            options={departments.map(opt => ({ label: opt, value: opt }))} 
+            value={dept}
+            onChange={handleDeptChange}
+            placeholder="Department" />
+          </div>
+
+          {/*year*/}
+          <div className="formField">
+            <label className="formFieldLabel" htmlFor="year">
+              Year
+            </label>
+            <Select className="drop"  styles={customStyles} components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+            options={years.map(opt => ({ label: opt, value: opt }))}
+            onChange={handleYearChange} 
+            placeholder="Year" />
+          </div>
+          {/*Password*/}
           <div className="formField">
             <label className="formFieldLabel" htmlFor="password">
               Password
@@ -144,8 +138,6 @@ class SignUpForm extends Component {
               className="formFieldInput"
               placeholder="Enter your password"
               name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
             />
           </div>
            {/*confirm password*/}
@@ -159,27 +151,8 @@ class SignUpForm extends Component {
               className="formFieldInput"
               placeholder="Confirm your password"
               name="conpass"
-              value={this.state.conpass}
-              onChange={this.handleChange}
             />
           </div>
-
-          {/*<div className="formField">
-            <label className="formFieldCheckboxLabel">
-              <input
-                className="formFieldCheckbox"
-                type="checkbox"
-                name="hasAgreed"
-                value={this.state.hasAgreed}
-                onChange={this.handleChange}
-              />{" "}
-              I agree all statements in{" "}
-              <a href="null" className="formFieldTermsLink">
-                terms of service
-              </a>
-            </label>
-            </div>
-          */}
 
           <div className="formField">
             <button className="formFieldButton">Sign Up</button>{" "}
@@ -193,5 +166,4 @@ class SignUpForm extends Component {
       </div>
     );
   }
-}
-export default SignUpForm;
+export default SignUp2;

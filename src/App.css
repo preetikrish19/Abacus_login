@@ -1,4 +1,7 @@
-
+:root {
+  --grey: #bbbbbb;
+  --grey2: #dddddd;
+}
 .App {
   height: 100vh;
   display: flex;
@@ -8,13 +11,15 @@
 .appAside {
   width: 40%;
   background-color: #35858B;
-  background-image: url("gg.gif");
+  /*background-image: url("gg.gif");
+  background-repeat: no-repeat;
+  background-position: center;*/
+  background-image: url("./pages/assets/images/img2.jfif");
   background-repeat: no-repeat;
   background-position: center;
-  padding-top: 100px;
-  /*display: flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;*/
 }
 
 
@@ -144,10 +149,77 @@
 }
 
 .drop {
-  width: 50%;
+  width: 60%;
   color: #35858B;
   padding-top: 1vh;
   justify-content: center;
   display: block;
   margin: 0 auto; 
+}
+
+.typed-out{
+  font-size: 10vh;
+  color: papayawhip;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  font-size: 1.6rem;
+  width: 0;
+  animation: typing 10s steps(20, end) forwards,
+  blink .8s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--grey), 0 0 40px var(--grey);
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px var(--grey2), 0 0 40px var(--grey2), 0 0 50px var(--grey2);
+  }
+}
+
+.typing-demo {
+  width: 100%;
+  animation: typing  1.8s steps(8), blink 0.5s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: Roboto;
+  font-size: 5em;
+  color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  .typing-demo {
+    font-size: 3em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .typing-demo {
+    font-size: 1.8em;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }

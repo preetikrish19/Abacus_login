@@ -1,11 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
 import departments from "./assets/departments";
 import years from "./assets/years";
 import colleges from "./assets/colleges";
-class SignUpForm extends Component {
-  
+class SignUp extends Component {
   constructor() {
     super();
 
@@ -43,10 +42,6 @@ class SignUpForm extends Component {
   }
 
   render() {
-    const [dept, setdept] = useState(null);
-    const handleDeptChange = (selectedOption) => {
-      setdept(selectedOption);
-    }
     return (
       <div className="formCenter">
         <form onSubmit={this.handleSubmit} className="formFields">
@@ -84,8 +79,8 @@ class SignUpForm extends Component {
             </label>
             <Select className="drop" components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
             options={departments.map(opt => ({ label: opt, value: opt }))}
-            onChange={handleDeptChange} 
-            placeholder="Departments" />
+            onChange={this.handleChange} 
+            placeholder="Department" />
           </div>
 
             {/*college*/}
@@ -95,8 +90,7 @@ class SignUpForm extends Component {
             </label>
             <Select className="drop" components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
             options={colleges.map(opt => ({ label: opt, value: opt }))}
-            onChange={(e) => setdept(e.target.value)}
-            value={dept}
+            onChange={this.handleChange} 
             placeholder="College" />
           </div>
 
@@ -189,4 +183,4 @@ class SignUpForm extends Component {
     );
   }
 }
-export default SignUpForm;
+export default SignUp;

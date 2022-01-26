@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
-import SignUp from "./pages/SignUp";
+import SignUp2 from "./pages/signup2";
+//import SignUp from "./pages/SignUp";
 import SignInForm from "./pages/SignInForm";
+import { Typography } from "@material-ui/core";
 import "./App.css";
 
 class App extends Component {
@@ -9,7 +11,18 @@ class App extends Component {
     return (
       <Router basename="/react-auth-ui/">
         <div className="App">
-        <div className="appAside" />
+       {/*<div className="appAside" ><center><div className="typed-out">Welcome!</div></center></div>*/}
+       <div className="appAside" >
+         <center>
+       <Typography>
+       <div className="typing-demo" width="40%">
+         <div className="glow">
+            Welcome!
+          </div>
+          </div>
+        </Typography>
+        </center>
+        </div>
           <div className="appForm">
             <div className="pageSwitcher">
               <NavLink
@@ -48,7 +61,7 @@ class App extends Component {
               </NavLink>
             </div>
 
-            <Route exact path="/" component={SignUp} />   {/* Signup form*/}
+            <Route exact path="/" component={SignUp2} />   {/* Signup form*/}
             <Route path="/sign-in" component={SignInForm} />
           </div>
         </div>
