@@ -85,7 +85,7 @@ class SignUpForm extends Component {
             <Select className="drop" components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
             options={departments.map(opt => ({ label: opt, value: opt }))}
             onChange={handleDeptChange} 
-            placeholder="Department" />
+            placeholder="Departments" />
           </div>
 
             {/*college*/}
