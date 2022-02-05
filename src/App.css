@@ -9,7 +9,7 @@
 }
 
 .appAside {
-  width: 40%;
+  width: 45%;
   background-color: #35858B;
   /*background-image: url("gg.gif");
   background-repeat: no-repeat;
@@ -24,11 +24,15 @@
 
 
 .appForm {
-  width: 60%;
+  width: 55%;
+  background-image: url(./pages/assets/images/blue.jpeg);
   background-color: #12130f;
   padding: 25px 40px;
   overflow: auto;
   text-align: center;
+  -webkit-box-shadow:0 0 20px #6FDDDA; 
+  -moz-box-shadow: 0 0 20px #6FDDDA; 
+  box-shadow:0 0 20px #6FDDDA;
 }
 
 .pageSwitcher {
@@ -47,7 +51,9 @@
   display: inline-block;
   text-decoration: none;
 }
-
+.pageSwitcherItem:hover {
+  box-shadow: 0 12px 16px 0 #4FBDBA3d, 0 17px 50px 0 #4FBDBA30;
+}
 .pageSwitcherItem-active {
   background-color: #4FBDBA;
   color: white;
@@ -128,6 +134,9 @@
   padding: 15px 70px;
   font-size: 0.8em;
   font-weight: 500;
+}
+.formFieldButton:hover {
+  box-shadow: 0 12px 16px 0 #4FBDBA3d, 0 17px 50px 0 #4FBDBA30;
 }
 
 .formFieldLink {
@@ -222,4 +231,21 @@
   50% {
     border-color: transparent;
   }
+}
+/*SCROLL*/
+/* width */
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4FBDBA; 
+  border-radius: 0.5vw;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6FDDDA; 
 }
