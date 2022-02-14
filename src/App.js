@@ -4,6 +4,7 @@ import SignUp2 from "./pages/signup2";
 import SignUp from "./pages/SignUp";
 import SignInForm from "./pages/SignInForm";
 import { Typography } from "@material-ui/core";
+import ForgotPassword from "./pages/ForgotPassword";
 import "./App.css";
 
 class App extends Component {
@@ -35,6 +36,7 @@ class App extends Component {
 
             <Route exact path="/" component={SignUp} />   {/* Signup form*/}
             <Route path="/sign-in" component={SignInForm} />
+            <Route path="/ForgotPassword" component={ForgotPassword} />
           </div>
         </div>
       </Router>

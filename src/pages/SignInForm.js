@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 
 
 class SignInForm extends Component {
@@ -68,16 +68,15 @@ class SignInForm extends Component {
 
           <div className="formField">
             <button className="formFieldButton">Sign In</button>{" "}
-            <Link to="/sign-in" className="formFieldButtonDirected" >
+            <NavLink to="/ForgotPassword" className="formFieldButtonDirected" >
               Forgot Password?
-            </Link>
+            </NavLink>
             </div>
             <div className="formField">
-            <Link to="/" className="formFieldLink">
+            <NavLink to="/" className="formFieldLink">
               Create an account
-            </Link>
-          </div>
-
+            </NavLink>
+          </div> 
         </form>
       </div>
     );

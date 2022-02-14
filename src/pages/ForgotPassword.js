@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
+import { Typography } from "@material-ui/core";
 
 function ForgotPassword() {
     return (
+      
       <div className="formCenter">
-        <form className="formFields" onSubmit={this.handleSubmit}>
+        <h1>Forgot your Password?</h1>
+        <h3>No worries! Enter your e-mail and we will send you a reset.</h3>
+        <form className="formFields">
           <div className="formField">
             <label className="formFieldLabel" htmlFor="email">
               E-Mail Address
@@ -16,10 +18,9 @@ function ForgotPassword() {
               className="formFieldInput"
               placeholder="Enter your email"
               name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
             />
           </div>
+          <button className="formFieldButton">Submit</button>{" "}
         </form>
       </div>
     );
