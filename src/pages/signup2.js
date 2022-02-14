@@ -159,7 +159,7 @@ function SignUp2 () {
             </div>
             <div className="formField">
             <Link to="/sign-in" className="formFieldLink">
-              I'm already member
+              I'm already a member
             </Link>
           </div>
         </form>
