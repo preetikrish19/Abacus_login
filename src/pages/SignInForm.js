@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
-
+import ForgotPassword from "./ForgotPassword";
 
 class SignInForm extends Component {
   constructor() {
@@ -34,6 +34,7 @@ class SignInForm extends Component {
 
   render() {
     return (
+    <Router>
       <div className="formCenter">
         <form className="formFields" onSubmit={this.handleSubmit}>
           <div className="formField">
@@ -76,9 +77,11 @@ class SignInForm extends Component {
             <NavLink to="/" className="formFieldLink">
               Create an account
             </NavLink>
+            <Route path="/ForgotPassword" component={ForgotPassword} />
           </div> 
         </form>
       </div>
+      </Router>
     );
   }
 }

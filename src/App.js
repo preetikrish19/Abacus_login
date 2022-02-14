@@ -6,7 +6,7 @@ import SignInForm from "./pages/SignInForm";
 import { Typography } from "@material-ui/core";
 import ForgotPassword from "./pages/ForgotPassword";
 import "./App.css";
-
+import NewPassword from "./pages/NewPassword";
 class App extends Component {
   render() {
     return (
@@ -33,8 +33,8 @@ class App extends Component {
                 Sign Up
               </NavLink>
             </div>
-
-            <Route exact path="/" component={SignUp} />   {/* Signup form*/}
+            <Route path="/NewPassword" component = {NewPassword}/>
+            <Route exact path="/" component={SignUp} />   
             <Route path="/sign-in" component={SignInForm} />
             <Route path="/ForgotPassword" component={ForgotPassword} />
           </div>
