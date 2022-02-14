@@ -37,13 +37,13 @@
 
 .pageSwitcher {
   margin-bottom: 10%;
-  padding-top: 10%;
+  margin-top: 10%;
 }
 
 .pageSwitcherItem {
   background-color: #40434e;
   color: #9da6b1;
-  padding: 10px 25px;
+  padding: 2.5vh 7vw;
   cursor: pointer;
   font-size: 0.9em;
   border: none;
