@@ -1,35 +1,34 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
-import SignUp2 from "./pages/signup2";
 import SignUp from "./pages/SignUp";
 import SignInForm from "./pages/SignInForm";
 import { Typography } from "@material-ui/core";
 import ForgotPassword from "./pages/ForgotPassword";
-import "./App.css";
+import logstyle from "./logstyle.module.css";
 import NewPassword from "./pages/NewPassword";
 class App extends Component {
   render() {
     return (
       <Router basename="/react-auth-ui/">
-        <div className="App">
-       {/*<div className="appAside" ><center><div className="typed-out">Welcome!</div></center></div>*/}
-       <div className="appAside" >
+        <div className={logstyle.App}>
+       {/*<div className={logstyle.appAside} ><center><div className={logstyle.typed-out}>Welcome!</div></center></div>*/}
+       <div className={logstyle.appAside} >
          <center>
        <Typography>
-       <div className="typing-demo" width="40%">
-         <div className="glow">
+       <div className={logstyle.typing-demo} width="40%">
+         <div className={logstyle.glow}>
             Welcome!
           </div>
           </div>
         </Typography>
         </center>
         </div>
-          <div className="appForm">
-            <div className="pageSwitcher">
-              <NavLink to="/sign-in" activeClassName="pageSwitcherItem-active" className="pageSwitcherItem" >
+          <div className={logstyle.appForm}>
+            <div className={logstyle.pageSwitcher}>
+              <NavLink to="/sign-in" activeclassName={logstyle.pageSwitcherItem-active} className={logstyle.pageSwitcherItem} >
                 Sign In
               </NavLink>
-              <NavLink exact to="/" activeClassName="pageSwitcherItem-active" className="pageSwitcherItem">
+              <NavLink exact to="/" activeclassName={logstyle.pageSwitcherItem-active} className={logstyle.pageSwitcherItem}>
                 Sign Up
               </NavLink>
             </div>

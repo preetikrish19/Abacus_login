@@ -1,31 +1,31 @@
 import React, { Component } from "react";
-import "./../App.css";
+import logstyle from "./../login.module.css";
 
 function NewPassword() {
     return (
-      <div className="formCenter">
-        <form className="formFields">
-        <div className="formField">
-            <label className="formFieldLabel" htmlFor="password">
+      <div className={logstyle.formCenter}>
+        <form className={logstyle.formFields}>
+        <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="password">
               Password
             </label>
             <input
               type="password"
               id="password"
-              className="formFieldInput"
+              className={logstyle.formFieldInput}
               placeholder="Enter your password"
               name="password"
             />
           </div>
-           {/*confirm password*/}
-           <div className="formField">
-            <label className="formFieldLabel" htmlFor="conpass">
+           {/confirm password/}
+           <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="conpass">
               Confirm Password
             </label>
             <input
               type="password"
               id="conpass"
-              className="formFieldInput"
+              className={logstyle.formFieldInput}
               placeholder="Confirm your password"
               name="conpass"
             />

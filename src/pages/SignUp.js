@@ -4,6 +4,7 @@ import Select from 'react-select';
 import departments from "./assets/departments";
 import years from "./assets/years";
 import colleges from "./assets/colleges";
+
 class SignUp extends Component {
   constructor() {
     super();
@@ -43,17 +44,17 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="formCenter">
-        <form onSubmit={this.handleSubmit} className="formFields">
+      <div className={logstyle.formCenter}>
+        <form onSubmit={this.handleSubmit} className={logstyle.formFields}>
           {/*name*/}
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="name">
+          <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="name">
               Full Name
             </label>
             <input
               type="text"
               id="name"
-              className="formFieldInput"
+              className={logstyle.formFieldInput}
               placeholder="Enter your full name"
               name="name"
               value={this.state.name}
@@ -62,46 +63,46 @@ class SignUp extends Component {
           </div>
 
           {/*year*/}
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="year">
+          <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="year">
               Year
             </label>
-            <Select className="drop"  components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+            <Select className={logstyle.drop}  components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
             options={years.map(opt => ({ label: opt, value: opt }))}
             onChange={this.handleChange} 
             placeholder="Year" />
           </div>
 
           {/*department*/}
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="dept">
+          <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="dept">
               Department
             </label>
-            <Select className="drop" components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+            <Select className={logstyle.drop} components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
             options={departments.map(opt => ({ label: opt, value: opt }))}
             onChange={this.handleChange} 
             placeholder="Department" />
           </div>
 
             {/*college*/}
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="colg">
+          <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="colg">
               College
             </label>
-            <Select className="drop" components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+            <Select className={logstyle.drop} components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
             options={colleges.map(opt => ({ label: opt, value: opt }))}
             onChange={this.handleChange} 
             placeholder="College" />
           </div>
 
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="email">
+          <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="email">
               E-Mail Address
             </label>
             <input
               type="email"
               id="email"
-              className="formFieldInput"
+              className={logstyle.formFieldInput}
               placeholder="Enter your email"
               name="email"
               value={this.state.email}
@@ -109,28 +110,28 @@ class SignUp extends Component {
             />
           </div>
            {/*phone*/}
-           <div className="formField">
-            <label className="formFieldLabel" htmlFor="phone">
+           <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="phone">
               Phone Number
             </label>
             <input
               type="number"
               id="phone"
-              className="formFieldInput"
+              className={logstyle.formFieldInput}
               placeholder="Enter your Phone Number"
               name="phone"
               value={this.state.phone}
               onChange={this.handleChange}
             />
           </div>
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="password">
+          <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="password">
               Password
             </label>
             <input
               type="password"
               id="password"
-              className="formFieldInput"
+              className={logstyle.formFieldInput}
               placeholder="Enter your password"
               name="password"
               value={this.state.password}
@@ -138,14 +139,14 @@ class SignUp extends Component {
             />
           </div>
            {/*confirm password*/}
-           <div className="formField">
-            <label className="formFieldLabel" htmlFor="conpass">
+           <div className={logstyle.formField}>
+            <label className={logstyle.formFieldLabel} htmlFor="conpass">
               Confirm Password
             </label>
             <input
               type="password"
               id="conpass"
-              className="formFieldInput"
+              className={logstyle.formFieldInput}
               placeholder="Confirm your password"
               name="conpass"
               value={this.state.conpass}
@@ -153,28 +154,12 @@ class SignUp extends Component {
             />
           </div>
 
-          {/*<div className="formField">
-            <label className="formFieldCheckboxLabel">
-              <input
-                className="formFieldCheckbox"
-                type="checkbox"
-                name="hasAgreed"
-                value={this.state.hasAgreed}
-                onChange={this.handleChange}
-              />{" "}
-              I agree all statements in{" "}
-              <a href="null" className="formFieldTermsLink">
-                terms of service
-              </a>
-            </label>
-            </div>
-          */}
 
-          <div className="formField">
-            <button className="formFieldButton">Sign Up</button>{" "}
+          <div className={logstyle.formField}>
+            <button className={logstyle.formFieldButton}>Sign Up</button>{" "}
             </div>
-            <div className="formField">
-            <Link to="/sign-in" className="formFieldLink">
+            <div className={logstyle.formField}>
+            <Link to="/sign-in" className={logstyle.formFieldLink}>
               I'm already a member
             </Link>
           </div>
