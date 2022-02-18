@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Typography } from "@material-ui/core";
-
+import logstyle from "./../logstyle.module.css";
 function ForgotPassword() {
     return (
       

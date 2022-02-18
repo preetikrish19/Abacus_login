@@ -15,7 +15,7 @@ class App extends Component {
        <div className={logstyle.appAside} >
          <center>
        <Typography>
-       <div className={logstyle.typing-demo} width="40%">
+       <div className={logstyle.typingDemo} width="40%">
          <div className={logstyle.glow}>
             Welcome!
           </div>
@@ -25,10 +25,10 @@ class App extends Component {
         </div>
           <div className={logstyle.appForm}>
             <div className={logstyle.pageSwitcher}>
-              <NavLink to="/sign-in" activeclassName={logstyle.pageSwitcherItem-active} className={logstyle.pageSwitcherItem} >
+              <NavLink to="/sign-in" activeclassName={logstyle.pageSwitcherItemActive} className={logstyle.pageSwitcherItem} >
                 Sign In
               </NavLink>
-              <NavLink exact to="/" activeclassName={logstyle.pageSwitcherItem-active} className={logstyle.pageSwitcherItem}>
+              <NavLink exact to="/" activeclassName={logstyle.pageSwitcherItemActive} className={logstyle.pageSwitcherItem}>
                 Sign Up
               </NavLink>
             </div>

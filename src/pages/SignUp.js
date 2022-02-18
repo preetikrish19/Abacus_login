@@ -4,7 +4,7 @@ import Select from 'react-select';
 import departments from "./assets/departments";
 import years from "./assets/years";
 import colleges from "./assets/colleges";
-
+import logstyle from "./../logstyle.module.css";
 class SignUp extends Component {
   constructor() {
     super();

@@ -51,7 +51,7 @@
 .pageSwitcherItem:hover {
   box-shadow: 0 12px 16px 0 #4fbdba3d, 0 17px 50px 0 #4fbdba30;
 }
-.pageSwitcherItem-active {
+.pageSwitcherItemActive {
   background-color: #4fbdba;
   color: white;
 }
@@ -88,7 +88,7 @@
   margin-left: 0;
 }
 
-.formTitleLink-active {
+.formTitleLinkActive {
   color: white;
   border-bottom: 1px solid #35858b;
 }
@@ -217,7 +217,7 @@
   }
 }
 
-.typing-demo {
+.typingDemo {
   width: 100%;
   animation: typing 1.8s steps(8), blink 0.5s step-end infinite;
   white-space: nowrap;
@@ -229,12 +229,12 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .typing-demo {
+  .typingDemo {
     font-size: 3em;
   }
 }
 @media only screen and (max-width: 600px) {
-  .typing-demo {
+  .typingDemo {
     font-size: 1.8em;
   }
 }

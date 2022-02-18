@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logstyle from "./../login.module.css";
+import logstyle from "./../logstyle.module.css";
 
 function NewPassword() {
     return (
